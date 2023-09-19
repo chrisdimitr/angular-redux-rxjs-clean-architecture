@@ -1,0 +1,18 @@
+.app-layout {
+  &-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &-logo {
+    padding: 0.5rem;
+    cursor: pointer;
+  }
+
+  &-footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1rem;
+  }
+}

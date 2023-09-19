@@ -1,0 +1,4 @@
+<router-outlet *ngIf="isAppInitialized"></router-outlet>
+<div *ngIf="!isAppInitialized" class="app-init-loader-container">
+  <mat-spinner></mat-spinner>
+</div>
