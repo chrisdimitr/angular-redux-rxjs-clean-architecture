@@ -1,8 +1,9 @@
+import { NgIf } from "@angular/common";
 import { Component, OnInit } from "@angular/core";
-import { environment } from "../environments/environment";
 import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 import { RouterOutlet } from "@angular/router";
-import { NgIf } from "@angular/common";
+
+import { environment } from "@environments/environment";
 
 @Component({
   selector: "app-root",

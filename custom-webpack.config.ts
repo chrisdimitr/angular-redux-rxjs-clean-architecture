@@ -1,6 +1,7 @@
-import DotenvWebpackPlugin from "dotenv-webpack";
 import CompressionPlugin from "compression-webpack-plugin";
-import { EAppEnvironment } from "./src/environments/environment.model";
+import DotenvWebpackPlugin from "dotenv-webpack";
+
+import { EAppEnvironment } from "@environments/environment.model";
 
 const getEnvFilePerEnvironment = (): string => {
   return !process.env.APP_ENV || process.env.APP_ENV === EAppEnvironment.LOCAL ? ".env" : `.env.${process.env.APP_ENV}`;

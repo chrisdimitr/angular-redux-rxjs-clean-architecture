@@ -1,7 +1,9 @@
 import { NgModule } from "@angular/core";
+
 import { AuthModule } from "@auth0/auth0-angular";
-import { environment } from "../../../environments/environment";
 import { CacheLocation } from "@auth0/auth0-spa-js/src/global";
+
+import { environment } from "@environments/environment";
 
 export const auth0Config = {
   domain: environment.APP_UI_AUTH0_DOMAIN as string,

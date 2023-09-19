@@ -6,5 +6,21 @@
   "bracketSameLine": false,
   "arrowParens": "always",
   "printWidth": 120,
-  "endOfLine": "auto"
+  "endOfLine": "auto",
+  "plugins": ["@trivago/prettier-plugin-sort-imports"],
+  "importOrderParserPlugins": ["typescript", "decorators-legacy"],
+  "importOrder": [
+    "^@angular/(.*)$",
+    "<THIRD_PARTY_MODULES>",
+    "^@app/(.*)$",
+    "^@config/(.*)$",
+    "^@environments/(.*)$",
+    "^@shared/(.*)$",
+    "^domains/(.*)$",
+    "^usecases/(.*)$",
+    "^components/(.*)$",
+    "^[./]"
+  ],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true
 }

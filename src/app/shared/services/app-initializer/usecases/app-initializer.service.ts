@@ -1,4 +1,5 @@
 import { Injectable } from "@angular/core";
+
 import { IGenericAppInitializerUseCase } from "@shared/services/app-initializer/usecases/ports/in/IGenericAppInitializerUseCase";
 
 @Injectable({

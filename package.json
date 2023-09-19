@@ -45,6 +45,7 @@
     "@angular-eslint/template-parser": "16.1.2",
     "@angular/cli": "~16.2.2",
     "@angular/compiler-cli": "^16.2.0",
+    "@trivago/prettier-plugin-sort-imports": "^4.2.0",
     "@types/compression-webpack-plugin": "^9.1.1",
     "@types/dotenv-webpack": "^7.0.4",
     "@types/jasmine": "~4.3.0",

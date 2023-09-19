@@ -1,12 +1,12 @@
-import imagemin from "imagemin-overwrite";
+import { readdirSync } from "fs";
 import imageminJpegtran from "imagemin-jpegtran";
 import imageminOptipng from "imagemin-optipng";
-import { readdirSync } from "fs";
+import imagemin from "imagemin-overwrite";
 
-const getAssetImagesDirectories = source =>
+const getAssetImagesDirectories = (source) =>
   readdirSync(source, { withFileTypes: true })
-    .filter(dirent => dirent.isDirectory())
-    .map(dirent => buildPath + dirent.name + "/*.{jpg,png}");
+    .filter((dirent) => dirent.isDirectory())
+    .map((dirent) => buildPath + dirent.name + "/*.{jpg,png}");
 
 const buildPath = "dist/angular-redux-rxjs-clean-architecture/assets/images/";
 

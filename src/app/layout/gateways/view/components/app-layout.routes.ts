@@ -1,4 +1,5 @@
 import { Routes } from "@angular/router";
+
 import { AppLayoutComponent } from "@app/layout/gateways/view/components/app-layout.component";
 
 export const enterpriseOverviewPath = "enterprise-overview";

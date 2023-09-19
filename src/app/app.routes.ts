@@ -1,7 +1,9 @@
 import { Routes } from "@angular/router";
-import { SecuredGuard } from "@shared/guards/secured/secured.guard";
-import { appLayoutResolver } from "./layout/gateways/view/components/app-layout.resolver";
+
 import { AnonymousGuard } from "@shared/guards/anonymous/anonymousGuard";
+import { SecuredGuard } from "@shared/guards/secured/secured.guard";
+
+import { appLayoutResolver } from "./layout/gateways/view/components/app-layout.resolver";
 
 export const authCallbackPath = "auth-callback";
 export const homePath = "";

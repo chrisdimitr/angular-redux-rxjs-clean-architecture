@@ -1,4 +1,5 @@
 import { Observable } from "rxjs";
+
 import { AuthUser } from "@app/auth/domains/AuthUser";
 
 export interface IAuthGenericUseCase {

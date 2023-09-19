@@ -1,11 +1,13 @@
 import { Injectable } from "@angular/core";
-import { IAuthGenericUseCase } from "@app/auth/usecases/ports/in/IAuthGenericUseCase";
-import { IAuthProviderUseCase } from "@app/auth/usecases/ports/in/IAuthProviderUseCase";
-import { Observable, take } from "rxjs";
-import { AuthUser } from "@app/auth/domains/AuthUser";
+
 import { AuthService } from "@auth0/auth0-angular";
 import { RedirectLoginResult } from "@auth0/auth0-spa-js";
+import { Observable, take } from "rxjs";
+
 import { AuthProviderCallback } from "@app/auth/domains/AuthProviderCallback";
+import { AuthUser } from "@app/auth/domains/AuthUser";
+import { IAuthGenericUseCase } from "@app/auth/usecases/ports/in/IAuthGenericUseCase";
+import { IAuthProviderUseCase } from "@app/auth/usecases/ports/in/IAuthProviderUseCase";
 
 @Injectable({
   providedIn: "root"
