@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
   public isAppInitialized = true;
 
   constructor() {
-    console.log("[AppComponent] constructor", environment.APP_UI_AUTH0_CLIENT_ID, environment.APP_ENV);
+    console.log("[AppComponent] constructor", environment.APP_ENV, environment.APP_UI_AUTH0_CLIENT_ID);
   }
 
   ngOnInit(): void {}

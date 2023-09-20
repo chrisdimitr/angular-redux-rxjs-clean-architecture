@@ -1,11 +1,11 @@
 import CompressionPlugin from "compression-webpack-plugin";
 import DotenvWebpackPlugin from "dotenv-webpack";
 
-import { EAppEnvironment } from "@environments/environment.model";
+// import { EAppEnvironment } from "@environments/environment.model";
 
-const getEnvFilePerEnvironment = (): string => {
+/*const getEnvFilePerEnvironment = (): string => {
   return !process.env.APP_ENV || process.env.APP_ENV === EAppEnvironment.LOCAL ? ".env" : `.env.${process.env.APP_ENV}`;
-};
+};*/
 
 module.exports = {
   output: {
@@ -13,12 +13,11 @@ module.exports = {
   },
   plugins: [
     new DotenvWebpackPlugin({
-      path: getEnvFilePerEnvironment(),
       systemvars: true
     }),
     new CompressionPlugin({
       // Be very carefully with 'true', sometimes bug happens
-      deleteOriginalAssets: true,
+      deleteOriginalAssets: false,
       algorithm: "gzip",
       test: /\.(js|css|html)$/
     })

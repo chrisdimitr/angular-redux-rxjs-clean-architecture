@@ -63,3 +63,7 @@ lerna-debug.log*
 
 # cache
 .angular
+
+# .env files
+.env
+.env.*
