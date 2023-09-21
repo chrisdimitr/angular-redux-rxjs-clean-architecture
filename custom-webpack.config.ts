@@ -19,7 +19,7 @@ module.exports = {
       // Be very carefully with 'true', sometimes bug happens
       deleteOriginalAssets: false,
       algorithm: "gzip",
-      test: /\.(js|css|html)$/
+      test: /\.(js|css|svg|txt|eot|otf|ttf|gif)$/
     })
   ]
 };

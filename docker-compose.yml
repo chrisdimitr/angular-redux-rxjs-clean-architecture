@@ -1,0 +1,11 @@
+version: "3.3"
+
+services:
+  app:
+    image: angular-redux-rxjs-clean-architecture:prod
+    container_name: angular-redux-rxjs-clean-architecture
+    ports:
+      - "8080:80"
+    #volumes:
+      #- ./ng-project:/app
+      #- /app/node_modules

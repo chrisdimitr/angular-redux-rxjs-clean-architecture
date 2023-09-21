@@ -10,7 +10,7 @@ fs.readdir(buildPath, (err, files) => {
   }
 
   // Filter files to keep only those with the .js extension
-  const jsFiles = files.filter((file) => path.extname(file) === '.js');
+  const jsFiles = files.filter((file) => path.extname(file).match(/\.(js|css|svg|txt|eot|otf|ttf|gif)$/) );
 
   // Delete each file
   jsFiles.forEach((file) => {
