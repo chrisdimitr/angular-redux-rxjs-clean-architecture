@@ -4,6 +4,8 @@ services:
   app:
     image: angular-redux-rxjs-clean-architecture:prod
     container_name: angular-redux-rxjs-clean-architecture
+    env_file:
+      - .env
     ports:
       - "8080:80"
     #volumes:

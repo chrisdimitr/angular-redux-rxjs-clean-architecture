@@ -1,6 +1,8 @@
+import { EAppEnvironment } from "@environments/environment.model";
+
 export const environment = {
   // SYSTEM
-  APP_ENV: "local",
+  APP_ENV: EAppEnvironment.LOCAL,
 
   // MAIN
   APP_UI_PORT: 5173,

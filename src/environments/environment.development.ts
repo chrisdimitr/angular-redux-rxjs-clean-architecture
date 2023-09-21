@@ -1,6 +1,8 @@
+import { EAppEnvironment } from "@environments/environment.model";
+
 export const environment = {
   // SYSTEM
-  APP_ENV: process.env.APP_ENV,
+  APP_ENV: EAppEnvironment.DEVELOPMENT,
 
   // MAIN
   APP_UI_PORT: process.env.APP_UI_PORT,
