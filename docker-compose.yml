@@ -2,10 +2,10 @@ version: "3.8"
 
 services:
   app:
-    image: angular-redux-rxjs-clean-architecture:${IMAGE_TAG_NAME}
+    image: angular-redux-rxjs-clean-architecture:${IMAGE_TAG_NAME} # Command line argument e.g IMAGE_TAG_NAME=development-v0.0.1 docker compose up -d
     container_name: angular-redux-rxjs-clean-architecture
     ports:
-      - "8080:80"
+      - "${APP_UI_PORT}:80"
     networks:
       - frontend
     labels:

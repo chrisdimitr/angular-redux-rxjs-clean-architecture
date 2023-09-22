@@ -22,7 +22,7 @@ else
     TAG="${IMAGE_NAME}:${ENVIRONMENT}-v${VERSION}"
 
     echo "Creating an image with the tag '${TAG}'"
-    docker build --build-arg BUILD_ENV_TAG="${ENVIRONMENT}" -t "${TAG}" .
+    docker build --build-arg BUILD_ENV_TAG="${ENVIRONMENT}" -t "${TAG}" --progress=plain --no-cache .
 
     #echo "Pushing the image '${TAG}' to registry"
     #docker push "${TAG}"
@@ -31,7 +31,7 @@ else
     LATEST_TAG="${IMAGE_NAME}:latest"
 
     echo "Creating an image with tags '${TAG}' and '${LATEST_TAG}'"
-    docker build --build-arg BUILD_ENV_TAG=production -t "${TAG}" -t "${LATEST_TAG}" .
+    docker build --build-arg BUILD_ENV_TAG=production -t "${TAG}" -t "${LATEST_TAG}" --progress=plain --no-cache .
 
     #echo "Pushing the image '${TAG}' to registry"
     #docker push "${TAG}"

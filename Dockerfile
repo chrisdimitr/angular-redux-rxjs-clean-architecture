@@ -8,7 +8,9 @@ ARG BUILD_ENV_TAG
 
 WORKDIR /app
 
+RUN echo "Working directory: $(pwd)"
 COPY . .
+RUN ls -la
 RUN npm ci
 RUN echo "Building Application for '${BUILD_ENV_TAG}' environment"
 RUN npm run build:${BUILD_ENV_TAG}
@@ -17,7 +19,8 @@ RUN npm run build:${BUILD_ENV_TAG}
 FROM nginx:alpine AS DeployApp
 RUN echo "Stage 2 - Deploy Application on Nginx"
 
+RUN echo "Working directory: $(pwd)"
 COPY --from=BuildApp /app/dist/angular-redux-rxjs-clean-architecture /usr/share/nginx/html
 COPY scripts/docker/nginx/nginx.conf /etc/nginx/conf.d/default.conf
 
-EXPOSE 8080
+EXPOSE 80
