@@ -1,21 +1,42 @@
 #!/usr/bin/env bash
 
-ENVIRONMENT="$1"
-DEPLOYMENT=""
-
-pwd
+ENVIRONMENT="$1" # Could be 'development', 'uat' or 'Production'
+VERSION="$2" # Could be e.g 'XXX.YYY.ZZZ'
 
 if [ -z "$ENVIRONMENT" ]; then
-  echo "script param: Environment name parameter is missing or empty!";
+  echo "Script param: Environment parameter is missing or empty!";
   exit 1;
 else
-  if [ "$ENVIRONMENT" == "development" ]; then
-    DEPLOYMENT="dev"
+  if [ -z "$VERSION" ]
+  then
+    echo "Script param: Version parameter is missing or empty!";
+    exit 1;
+  fi
+
+  echo "Using environment: $ENVIRONMENT"
+  echo "Using version: $VERSION"
+
+  IMAGE_NAME="angular-redux-rxjs-clean-architecture"
+
+  if [[ "$ENVIRONMENT" == "development"  ||  "$ENVIRONMENT" == "uat" ]]; then
+    TAG="${IMAGE_NAME}:${ENVIRONMENT}-v${VERSION}"
+
+    echo "Creating an image with the tag '${TAG}'"
+    docker build --build-arg BUILD_ENV_TAG="${ENVIRONMENT}" -t "${TAG}" .
+
+    #echo "Pushing the image '${TAG}' to registry"
+    #docker push "${TAG}"
   else
-    DEPLOYMENT="prod"
+    TAG="${IMAGE_NAME}:v${VERSION}"
+    LATEST_TAG="${IMAGE_NAME}:latest"
+
+    echo "Creating an image with tags '${TAG}' and '${LATEST_TAG}'"
+    docker build --build-arg BUILD_ENV_TAG=production -t "${TAG}" -t "${LATEST_TAG}" .
+
+    #echo "Pushing the image '${TAG}' to registry"
+    #docker push "${TAG}"
+
+    #echo "Pushing the image '${LATEST_TAG}' to registry"
+    #docker push "${LATEST_TAG}"
   fi
 fi
-
-TAG_NAME="angular-redux-rxjs-clean-architecture:${DEPLOYMENT}"
-
-docker build --build-arg ENV=${DEPLOYMENT} -t $TAG_NAME .

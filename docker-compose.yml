@@ -1,13 +1,25 @@
-version: "3.3"
+version: "3.8"
 
 services:
   app:
-    image: angular-redux-rxjs-clean-architecture:prod
+    image: angular-redux-rxjs-clean-architecture:${IMAGE_TAG_NAME}
     container_name: angular-redux-rxjs-clean-architecture
-    env_file:
-      - .env
     ports:
       - "8080:80"
+    networks:
+      - frontend
+    labels:
+      application.info: "Angular"
+    restart: always
+    deploy:
+      resources:
+        limits:
+          cpus: "0.8"
+          memory: "4096M"
     #volumes:
-      #- ./ng-project:/app
-      #- /app/node_modules
+    #- ./docker-angular-redux-rxjs-clean-architecture:/app
+    #- /app/node_modules
+
+networks:
+  frontend:
+    name: frontend-network

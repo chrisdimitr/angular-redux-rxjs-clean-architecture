@@ -4,13 +4,14 @@ RUN echo "Stage 1 - Build Application"
 
 RUN apt-get update && apt-get install -y g++ make
 
-ARG ENV
+ARG BUILD_ENV_TAG
 
 WORKDIR /app
 
 COPY . .
 RUN npm ci
-RUN npm run build:${ENV}
+RUN echo "Building Application for '${BUILD_ENV_TAG}' environment"
+RUN npm run build:${BUILD_ENV_TAG}
 
 # Stage 2 - Deploy Application on Nginx
 FROM nginx:alpine AS DeployApp

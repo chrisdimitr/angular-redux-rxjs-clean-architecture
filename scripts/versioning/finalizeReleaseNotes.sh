@@ -10,13 +10,13 @@ RELEASE_NOTES_FILE=release-notes.html
 
 if [ -z "$TAG_NAME" ]
 then
-  echo "script param: Tag name parameter is missing or empty!";
+  echo "Script param: Tag parameter is missing or empty!";
   exit 1;
 fi
 
 if grep -q "v$TAG_NAME" "$RELEASE_NOTES_FILE";
 then
-  echo "message: Version '$TAG_NAME' already exists!";
+  echo "Message: Version '$TAG_NAME' already exists!";
   exit 1;
 fi
 
@@ -27,37 +27,37 @@ MISC_LABEL="Maintenance"
 
 if [ -z "$(cat ${RELEASE_NOTES_FILE})" ]
 then
-  echo "file: Release notes file is empty - No changelog exists!";
+  echo "File: Release notes file is empty - No changelog exists!";
   exit 1;
 fi
 
 if ! grep -q "$FIXES_LABEL" $RELEASE_NOTES_FILE
 then
-  echo "labels: $FIXES_LABEL label does not exist in previous release notes!";
+  echo "Labels: $FIXES_LABEL label does not exist in previous release notes!";
   exit 1;
 fi
 
 if ! grep -q "$FEATURES_LABEL" $RELEASE_NOTES_FILE
 then
-  echo "labels: $FEATURES_LABEL label does not exist in previous release notes!";
+  echo "Labels: $FEATURES_LABEL label does not exist in previous release notes!";
   exit 1;
 fi
 
 if ! grep -q "$DEPRECATED_LABEL" $RELEASE_NOTES_FILE
 then
-  echo "labels: $DEPRECATED_LABEL label does not exist in previous release notes!";
+  echo "Labels: $DEPRECATED_LABEL label does not exist in previous release notes!";
   exit 1;
 fi
 
 if ! grep -q "$MISC_LABEL" $RELEASE_NOTES_FILE
 then
-  echo "labels: $MISC_LABEL label does not exist in previous release notes!";
+  echo "Labels: $MISC_LABEL label does not exist in previous release notes!";
   exit 1;
 fi
 
 if grep -q "${TAG_NAME}" $RELEASE_NOTES_FILE
 then
-  echo "message: Release notes for '$TAG_NAME' already exist!";
+  echo "Message: Release notes for '$TAG_NAME' already exist!";
   exit 1;
 fi
 
@@ -97,4 +97,4 @@ $(echo "\n")\
 git add $RELEASE_NOTES_FILE
 git commit -m "Release notes tagged as $TAG_NAME and updated"
 
-echo "message: New version line '$TAG_NAME' and template were added successfully in the ${RELEASE_NOTES_FILE} file!";
+echo "Message: New version line '$TAG_NAME' and template were added successfully in the ${RELEASE_NOTES_FILE} file!";

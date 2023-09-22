@@ -36,5 +36,5 @@ else
   git tag -a $TAG_NAME -m "Tagged version $VERSION";
   git push origin master $TAG_NAME -o ci.skip; # Prevent triggering pipeline again
 
-  echo "message: Master branch tagged successfully as '$TAG_NAME' with the relevant release notes!";
+  echo "Message: Master branch tagged successfully as '$TAG_NAME' with the relevant release notes!";
 fi

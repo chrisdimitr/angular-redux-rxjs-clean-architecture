@@ -5,12 +5,12 @@ const buildPath = "dist/angular-redux-rxjs-clean-architecture";
 
 fs.readdir(buildPath, (err, files) => {
   if (err) {
-    console.error('Error reading directory contents:', err);
+    console.error("Error reading directory contents:", err);
     return;
   }
 
   // Filter files to keep only those with the .js extension
-  const jsFiles = files.filter((file) => path.extname(file).match(/\.(js|css|svg|txt|eot|otf|ttf|gif)$/) );
+  const jsFiles = files.filter((file) => path.extname(file).match(/\.(js|css|svg|txt|eot|otf|ttf|gif)$/));
 
   // Delete each file
   jsFiles.forEach((file) => {
@@ -19,5 +19,5 @@ fs.readdir(buildPath, (err, files) => {
     console.log(`Deleted file: ${filePath}`);
   });
 
-  console.log('Uncompressed files deleted successfully!');
+  console.log("Uncompressed files deleted successfully!");
 });

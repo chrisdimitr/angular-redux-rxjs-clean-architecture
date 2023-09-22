@@ -11,7 +11,7 @@ PROPERTY_FILE="package.json"
 
 if [ -z "$NEW_VERSION" ]
 then
-  echo "script param: Version parameter is missing or empty!";
+  echo "Script param: Version parameter is missing or empty!";
   exit 1;
 fi
 
@@ -20,11 +20,11 @@ then
   PREV_VERSION=$(getProperty $PROPERTY_FILE "version")
 fi
 
-echo "message: Previous version is '$PREV_VERSION'"
+echo "Message: Previous version is '$PREV_VERSION'"
 
 if [ "$NEW_VERSION" == "$PREV_VERSION" ]
 then
-  echo "message: Version '$NEW_VERSION' already exists!";
+  echo "Message: Version '$NEW_VERSION' already exists!";
   exit 1;
 fi
 
@@ -34,4 +34,4 @@ sed -i "s/\"version\": \".*\"/\"version\": \"$NEW_VERSION\"/" $PROPERTY_FILE
 git add -A
 git commit -m "$VERSION_UPDATE_COMMIT_MSG"
 
-echo "message: Project version updated successfully to '$NEW_VERSION'!";
+echo "Message: Project version updated successfully to '$NEW_VERSION'!";
