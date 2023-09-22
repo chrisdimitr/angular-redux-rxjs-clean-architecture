@@ -21,6 +21,6 @@ RUN echo "Stage 2 - Deploy Application on Nginx"
 
 RUN echo "Working directory: $(pwd)"
 COPY --from=BuildApp /app/dist/angular-redux-rxjs-clean-architecture /usr/share/nginx/html
-COPY scripts/docker/nginx/nginx.conf /etc/nginx/conf.d/default.conf
+COPY docker/nginx/nginx.conf /etc/nginx/conf.d/default.conf
 
 EXPOSE 80

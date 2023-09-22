@@ -66,6 +66,6 @@ lerna-debug.log*
 
 # .env files
 .env
-.env.development
-.env.uat
-.env.production
+*.env.development
+*.env.uat
+*.env.production
