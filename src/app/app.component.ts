@@ -3,7 +3,7 @@ import { Component, OnInit } from "@angular/core";
 import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 import { RouterOutlet } from "@angular/router";
 
-import { environment } from "@environments/environment";
+import { environmentVars } from "@shared/services/app-initializer/usecases/app-initializer.service";
 
 @Component({
   selector: "app-root",
@@ -16,7 +16,13 @@ export class AppComponent implements OnInit {
   public isAppInitialized = true;
 
   constructor() {
-    console.log("[AppComponent] constructor", environment.APP_ENV, environment.APP_UI_AUTH0_CLIENT_ID);
+    console.log(
+      "[AppComponent] constructor",
+      environmentVars.APP_ENV,
+      environmentVars.APP_ENV_VARS_URL,
+      environmentVars.APP_UI_ENCRYPTION_KEY,
+      environmentVars.APP_UI_PORT
+    );
   }
 
   ngOnInit(): void {}

@@ -1,7 +1,7 @@
-import { IGenericAppInitializerUseCase } from "@shared/services/app-initializer/usecases/ports/in/IGenericAppInitializerUseCase";
+import { IAppDataInitializerUseCase } from "@shared/services/app-initializer/usecases/ports/in/IAppDataInitializerUseCase";
 
 export const initializeRequiredGlobalDataFactory = (
-  appInitializerService: IGenericAppInitializerUseCase
+  appInitializerService: IAppDataInitializerUseCase
 ): (() => void) => {
-  return () => appInitializerService.setRequiredGlobalData();
+  return () => appInitializerService.loadRequiredGlobalData();
 };

@@ -1,18 +1,28 @@
 import { EAppEnvironment } from "@environments/environment.model";
 
-export const environment = {
+import { IEnvironmentVars } from "@shared/services/app-initializer/domains/environment-vars.domain";
+
+export const environment: IEnvironmentVars = {
   // SYSTEM
   APP_ENV: EAppEnvironment.DEVELOPMENT,
+  APP_ENV_VARS_URL: "assets/env/.env.development",
+  APP_UI_ENCRYPTION_KEY: process.env.APP_UI_ENCRYPTION_KEY, // Set at build time
+
+  // MOCK DATA
+  APP_UI_USE_MOCK_SERVER: false,
 
   // MAIN
-  APP_UI_PORT: process.env.APP_UI_PORT,
-  APP_UI_BASE_URI: process.env.APP_UI_BASE_URI,
+  APP_UI_PORT: undefined, // Set at runtime by retrieving 'APP_ENV_VARS_URL' file
+  APP_UI_BASE_URI: undefined, // Set at runtime by retrieving 'APP_ENV_VARS_URL' file
 
-  // BACKEND API
-  APP_UI_API_BASE_URI: process.env.APP_UI_API_BASE_URI,
+  // BACKEND
+  APP_UI_API_BASE_URI: undefined, // Set at runtime by retrieving 'APP_ENV_VARS_URL' file
 
-  // Auth0 Variables
-  APP_UI_AUTH0_DOMAIN: process.env.APP_UI_AUTH0_DOMAIN,
-  APP_UI_AUTH0_CLIENT_ID: process.env.APP_UI_AUTH0_CLIENT_ID,
-  APP_UI_AUTH0_REDIRECT_URI: process.env.APP_UI_AUTH0_REDIRECT_URI
+  // TRANSLATIONS
+  APP_UI_DEFAULT_LANGUAGE: undefined, // Set at runtime by retrieving 'APP_ENV_VARS_URL' file
+
+  // AUTH0
+  APP_UI_AUTH0_DOMAIN: undefined, // Set at runtime by retrieving 'APP_ENV_VARS_URL' file
+  APP_UI_AUTH0_CLIENT_ID: undefined, // Set at runtime by retrieving 'APP_ENV_VARS_URL' file
+  APP_UI_AUTH0_REDIRECT_URI: undefined // Set at runtime by retrieving 'APP_ENV_VARS_URL' file
 };

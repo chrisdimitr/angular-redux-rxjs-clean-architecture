@@ -17,6 +17,7 @@
         "build": {
           "builder": "@angular-builders/custom-webpack:browser",
           "options": {
+            "allowedCommonJsDependencies": ["crypto-js"],
             "customWebpackConfig": {
               "path": "custom-webpack.config.ts",
               "replaceDuplicatePlugins": true

@@ -65,7 +65,10 @@ lerna-debug.log*
 .angular
 
 # .env files
-.env
+*.env
 *.env.development
 *.env.uat
 *.env.production
+/src/assets/env/*.env.development
+/src/assets/env/*.env.uat
+/src/assets/env/*.env.production
