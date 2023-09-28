@@ -1,9 +1,14 @@
-import CryptoJS from "crypto-js";
+import * as openpgp from "@protontech/openpgp";
 
-export const aesUtf8Decryptor = (ecryptedText: string, encryptionKey: string): string | null => {
-  if (!ecryptedText.length || !encryptionKey.length) {
+export const pgpDecryptor = async (encryptedText: string, encryptionKey: string): Promise<string | null> => {
+  if (!encryptedText?.length || !encryptionKey?.length) {
     return null;
   }
 
-  return CryptoJS.AES.decrypt(ecryptedText, encryptionKey).toString(CryptoJS.enc.Utf8);
+  const { data } = await openpgp.decrypt({
+    message: await openpgp.readMessage({ armoredMessage: encryptedText }),
+    passwords: [encryptionKey]
+  });
+
+  return data as string;
 };

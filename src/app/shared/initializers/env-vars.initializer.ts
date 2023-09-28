@@ -6,7 +6,7 @@ export const initializeEnvironmentVariablesFactory = (
 ): (() => void) => {
   return () => {
     if (!isLocal()) {
-      appInitializerService.loadEnvironmentVariables();
+      return appInitializerService.loadEnvironmentVariables();
     }
   };
 };

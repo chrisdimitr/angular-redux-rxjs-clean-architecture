@@ -1,3 +1,5 @@
+import { Observable } from "rxjs";
+
 export interface IAppEnvironmentInitializerUseCase {
-  loadEnvironmentVariables(): void;
+  loadEnvironmentVariables(): Observable<string | null>;
 }

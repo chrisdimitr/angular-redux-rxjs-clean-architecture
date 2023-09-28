@@ -4,6 +4,12 @@ ENVIRONMENT="$1" # Could be 'development', 'uat' or 'Production'
 VERSION="$2" # Could be e.g 'XXX.YYY.ZZZ'
 ENCRYPTION_KEY="$3"
 
+# Check if the required arguments are provided
+if [ "$#" -ne 3 ]; then
+  echo "Usage: $0 <environment> <version> <encryption_key>"
+  exit 1
+fi
+
 if [ -z "$ENVIRONMENT" ]; then
   echo "Script param: Environment parameter is missing or empty!";
   exit 1;

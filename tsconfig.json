@@ -37,7 +37,7 @@
     "noUnusedParameters": true
   },
   "include": [".eslintrc.json", "src", "custom-webpack.config.ts"],
-  "exclude": ["node_modules", "scripts", "dist", "typings"],
+  "exclude": ["node_modules", "dist", "typings"],
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,

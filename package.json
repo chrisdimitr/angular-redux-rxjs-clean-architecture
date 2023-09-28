@@ -20,8 +20,8 @@
     "release-notes:commit": "sh scripts/versioning/finalizeReleaseNotes.sh",
     "tag-version-with-release-notes:commit": "sh scripts/versioning/tagVersionWithReleaseNotes.sh",
     "docker:build": "sh scripts/docker/build-image.sh",
-    "encrypt:file": "node scripts/encryption/file-encryptor.mjs",
-    "decrypt:file": "node scripts/encryption/file-decryptor.mjs"
+    "encrypt:file": "sh scripts/docker/encrypt-file.sh",
+    "decrypt:file": "node scripts/encryption/decrypt-file.mjs"
   },
   "private": true,
   "dependencies": {
@@ -36,6 +36,7 @@
     "@angular/platform-browser-dynamic": "^16.2.0",
     "@angular/router": "^16.2.0",
     "@auth0/auth0-angular": "^2.2.1",
+    "@protontech/openpgp": "^5.10.2",
     "crypto-js": "^4.1.1",
     "dotenv": "^16.3.1",
     "process": "^0.11.10",
@@ -62,6 +63,7 @@
     "@typescript-eslint/parser": "5.62.0",
     "compression-webpack-plugin": "^10.0.0",
     "cross-env": "^7.0.3",
+    "crypto-ts": "^1.0.2",
     "dotenv-webpack": "^8.0.1",
     "eslint": "^8.47.0",
     "eslint-config-prettier": "^9.0.0",
