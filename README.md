@@ -27,14 +27,14 @@ The architecture enforces a unidirectional dependency flow, with the inner layer
 
 ### Key Components of the Clean Architecture
 
-- #### Entity Layer:
+- #### Entities Layer:
 
   Represents the enterprise-wide business rules and core models.
   Independent of any specific framework or technology.
   Typically consists of plain data structures and business objects.
   This where we define the 'domain' folder.
 
-- #### Use Case Layer:
+- #### Use Cases Layer:
 
   Contains application-specific business rules and logic.
   Encapsulates the use cases or application-specific operations.
@@ -45,7 +45,7 @@ The architecture enforces a unidirectional dependency flow, with the inner layer
   the 'ports' folder that consist of 'in' and 'out' folders. As we are using
   redux state management, this is also where we define the 'store' folder.
 
-- #### Interface Layer:
+- #### Interface Adapters Layer:
 
   Defines the interfaces that allow the interaction between the application and external actors (Gateways).
   Includes user interfaces, web APIs, and external systems integration points.
