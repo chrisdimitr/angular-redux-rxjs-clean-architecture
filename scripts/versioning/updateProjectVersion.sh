@@ -11,7 +11,8 @@ PROPERTY_FILE="package.json"
 
 if [ -z "$NEW_VERSION" ]
 then
-  echo "Script param: Version parameter is missing or empty!";
+  echo "Script param: New Version parameter is missing or empty!";
+  echo "Usage: $0 <new_version> [prev_version]"
   exit 1;
 fi
 

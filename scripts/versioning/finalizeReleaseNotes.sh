@@ -4,13 +4,20 @@ DIR="${BASH_SOURCE%/*}"
 if [[ ! -d "$DIR" ]]; then DIR="$PWD"; fi
 . "$DIR/utils.sh"
 
+# Check if the required arguments are provided
+if [ "$#" -ne 1 ]; then
+  echo "Usage: $0 <tag_name>"
+  exit 1
+fi
+
 TAG_NAME="$1"
 
 RELEASE_NOTES_FILE=release-notes.html
 
 if [ -z "$TAG_NAME" ]
 then
-  echo "Script param: Tag parameter is missing or empty!";
+  echo "Script param: Tag Name parameter is missing or empty!";
+  echo "Usage: $0 <tag_name>"
   exit 1;
 fi
 

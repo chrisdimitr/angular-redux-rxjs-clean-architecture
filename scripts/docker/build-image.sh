@@ -12,17 +12,20 @@ fi
 
 if [ -z "$ENVIRONMENT" ]; then
   echo "Script param: Environment parameter is missing or empty!";
+  echo "Usage: $0 <environment> <version> <encryption_key>"
   exit 1;
 else
   if [ -z "$VERSION" ]
   then
     echo "Script param: Version parameter is missing or empty!";
+    echo "Usage: $0 <environment> <version> <encryption_key>"
     exit 1;
   fi
 
   if [ -z "$ENCRYPTION_KEY" ]
   then
     echo "Script param: Encryption Key parameter is missing or empty!";
+    echo "Usage: $0 <environment> <version> <encryption_key>"
     exit 1;
   fi
 

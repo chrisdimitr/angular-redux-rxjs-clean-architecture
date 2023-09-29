@@ -4,7 +4,20 @@ DIR="${BASH_SOURCE%/*}"
 if [[ ! -d "$DIR" ]]; then DIR="$PWD"; fi
 . "$DIR/utils.sh"
 
+# Check if the required arguments are provided
+if [ "$#" -ne 1 ]; then
+  echo "Usage: $0 <new_version>"
+  exit 1
+fi
+
 NEW_VERSION="$1"
+
+if [ -z "$NEW_VERSION" ]
+then
+  echo "Script param: New Version parameter is missing or empty!";
+  echo "Usage: $0 <new_version>"
+  exit 1;
+fi
 
 PROPERTY_FILE="package.json"
 
