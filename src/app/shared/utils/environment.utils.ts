@@ -1,7 +1,6 @@
+import { EAppEnvironment, IEnvironmentVars } from "@environments/entities/environment.entity";
 import { environment } from "@environments/environment";
-import { EAppEnvironment } from "@environments/environment.model";
 
-import { IEnvironmentVars } from "@shared/services/app-initializer/domains/environment-vars.domain";
 import { environmentVars } from "@shared/services/app-initializer/usecases/app-initializer.service";
 
 export const isLocal = (): boolean => environmentVars.APP_ENV === EAppEnvironment.LOCAL;

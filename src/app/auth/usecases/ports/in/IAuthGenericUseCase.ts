@@ -1,6 +1,6 @@
 import { Observable } from "rxjs";
 
-import { AuthUser } from "@app/auth/domains/AuthUser";
+import { AuthUser } from "@app/auth/entities/auth-user.entity";
 
 export interface IAuthGenericUseCase {
   login(): Observable<void>;

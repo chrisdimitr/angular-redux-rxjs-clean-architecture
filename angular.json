@@ -25,7 +25,7 @@
             "outputPath": "dist/angular-redux-rxjs-clean-architecture",
             "index": "src/index.html",
             "main": "src/main.ts",
-            "polyfills": ["zone.js", "src/app/config/process/process.config.ts"],
+            "polyfills": ["zone.js", "src/app/infrastructure/process/process.config.ts"],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": ["src/favicon.ico", "src/assets"],

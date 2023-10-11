@@ -32,7 +32,7 @@ The architecture enforces a unidirectional dependency flow, with the inner layer
   Represents the enterprise-wide business rules and core models.
   Independent of any specific framework or technology.
   Typically consists of plain data structures and business objects.
-  This where we define the 'domain' folder.
+  This where we define the 'entities' folder.
 
 - #### Use Cases Layer:
 
@@ -47,18 +47,18 @@ The architecture enforces a unidirectional dependency flow, with the inner layer
 
 - #### Interface Adapters Layer:
 
-  Defines the interfaces that allow the interaction between the application and external actors (Gateways).
+  Defines the interfaces that allow the interaction between the application and external actors.
   Includes user interfaces, web APIs, and external systems integration points.
   Should be implemented using platform-specific frameworks and technologies.
-  The Gateways in general implement the output Ports and consider to be the Adapters.
-  This is where we define the 'gateways' folder that consist of the 'backend' and 'view' folders.
+  The Interfaces Adapters in general implement the output Ports.
+  This is where we define the 'adapters' folder that consist of the 'backend' and 'view' folders.
 
 - #### Infrastructure Layer:
 
   Implements the technical details and frameworks required for the system to work.
   Deals with databases, external services, frameworks, drivers and tools.
   Must depend on the inner layers but not vice versa.
-  This is the where we define the 'config' folder for the whole app or inside each business object.
+  This is the where we define the 'infrastructure' folder for the whole app or inside each business object.
 
 ### Benefits of the Clean Architecture:
 

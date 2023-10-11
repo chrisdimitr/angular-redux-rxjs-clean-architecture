@@ -3,9 +3,9 @@ import { Injectable } from "@angular/core";
 
 import { Observable, from, of, switchMap, tap } from "rxjs";
 
+import { IEnvironmentVars } from "@environments/entities/environment.entity";
 import { environment } from "@environments/environment";
 
-import { IEnvironmentVars } from "@shared/services/app-initializer/domains/environment-vars.domain";
 import { IAppDataInitializerUseCase } from "@shared/services/app-initializer/usecases/ports/in/IAppDataInitializerUseCase";
 import { IAppEnvironmentInitializerUseCase } from "@shared/services/app-initializer/usecases/ports/in/IAppEnvironmentInitializerUseCase";
 import { pgpDecryptor } from "@shared/utils/encryption.utils";

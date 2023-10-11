@@ -13,10 +13,10 @@
     "^@angular/(.*)$",
     "<THIRD_PARTY_MODULES>",
     "^@app/(.*)$",
-    "^@config/(.*)$",
+    "^@infrastructure/(.*)$",
     "^@environments/(.*)$",
     "^@shared/(.*)$",
-    "^domains/(.*)$",
+    "^entities/(.*)$",
     "^usecases/(.*)$",
     "^components/(.*)$",
     "^[./]"

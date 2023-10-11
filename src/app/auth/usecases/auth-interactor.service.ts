@@ -4,8 +4,8 @@ import { AuthService } from "@auth0/auth0-angular";
 import { RedirectLoginResult } from "@auth0/auth0-spa-js";
 import { Observable, take } from "rxjs";
 
-import { AuthProviderCallback } from "@app/auth/domains/AuthProviderCallback";
-import { AuthUser } from "@app/auth/domains/AuthUser";
+import { AuthProviderCallback } from "@app/auth/entities/auth-provider-Callback.entity";
+import { AuthUser } from "@app/auth/entities/auth-user.entity";
 import { IAuthGenericUseCase } from "@app/auth/usecases/ports/in/IAuthGenericUseCase";
 import { IAuthProviderUseCase } from "@app/auth/usecases/ports/in/IAuthProviderUseCase";
 

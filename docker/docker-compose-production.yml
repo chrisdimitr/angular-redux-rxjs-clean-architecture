@@ -10,6 +10,8 @@ services:
       - frontend
     labels:
       application.info: "Angular"
+    volumes:
+      - .env.production:/opt/app/assets/env/.env.production
     restart: always
     deploy:
       resources:

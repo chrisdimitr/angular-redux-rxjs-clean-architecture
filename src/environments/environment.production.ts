@@ -1,6 +1,4 @@
-import { EAppEnvironment } from "@environments/environment.model";
-
-import { IEnvironmentVars } from "@shared/services/app-initializer/domains/environment-vars.domain";
+import { EAppEnvironment, IEnvironmentVars } from "@environments/entities/environment.entity";
 
 export const environment: IEnvironmentVars = {
   // SYSTEM
